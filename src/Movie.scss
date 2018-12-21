@@ -1,0 +1,46 @@
+
+.layout-t1 {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-around;
+    padding:20px;
+    box-sizing: border-box;
+    > div:not(.loading) {
+        width:45%;
+        position:relative;
+        padding:20px;
+        box-sizing:border-box;
+        background-color:#fff;
+        margin-bottom:20px;
+        box-shadow: 10px 10px 10px #ddd;
+        text-align: center;
+
+        .header {
+            img {
+                height: 200px;
+            }
+        }
+        > p:last-child {
+            text-align:left;
+        }
+    }
+}
+
+.list-t1 {
+    >li {
+        display: inline;
+
+        +li:before {
+            content: ', ';
+        }
+    }
+}
+
+@media screen and (min-width:320px) and (max-width:667px) and (orientation: portrait) {
+    .layout-t1 {
+        flex-direction: column;
+        > div:not(.loading) {
+            width: 100%;
+        }
+    }
+}
